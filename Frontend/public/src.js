@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('supportForm');
     const messageDiv = document.getElementById('message');
+    const url = 'https://ooyelabs-privacy-page.onrender.com'
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const issue = document.getElementById('issue').value;
 
         try {
-            const response = await fetch('https://ooyelabs-privacy-page.onrender.com/submit-issue', {
+            const response = await fetch(`${url}/submit-issue`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
