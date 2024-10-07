@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const issue = document.getElementById('issue').value;
 
         try {
-            const response = await fetch('/submit-issue', {
+            const response = await fetch('https://ooyelabs-privacy-page.onrender.com/submit-issue', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
