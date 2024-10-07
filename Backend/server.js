@@ -1,5 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
@@ -7,13 +8,9 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Nodemailer transporter setup
-
-const cors = require('cors');
-app.use(cors({ origin: process.env.ALLOWED_ORIGIN }));
-  
-
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
